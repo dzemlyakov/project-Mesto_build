@@ -1,4 +1,8 @@
-class CardList {
+import {Card} from './Card.js'
+import {disableButton} from './functions.js'
+import {newCardPopupButton} from './constants.js'
+
+export class CardList {
     constructor(container) {
         this.container = container;
         
@@ -9,3 +13,4 @@ class CardList {
         disableButton(newCardPopupButton);
     }
 }
+

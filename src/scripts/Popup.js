@@ -1,4 +1,7 @@
-class Popup {
+import {popupImage} from './constants'
+import {popupImageFullsize} from './constants'
+
+export class Popup {
     constructor(popup) {
         this.popup = popup;
         this.buttonClose = this.popup.querySelector('.popup__close');

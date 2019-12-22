@@ -1,3 +1,6 @@
+import {Popup} from './Popup.js'
+import {CardList} from './CardList.js'
+
 const placesList = document.querySelector('.places-list');
 const addCardButton = document.querySelector('.user-info__button');
 const userName = document.querySelector('.user-info__name');
@@ -43,7 +46,42 @@ const online = window.navigator.onLine;
 const internet = document.querySelector('.internet-error');
 const noInternetImage = document.querySelector('.user-info__photo');
   
-
+export {
+    placesList,
+    addCardButton,
+    userName,
+    userJob,
+    newCardForm,
+    newCardInputName,
+    newCardInputLink, 
+    newCardPopup,
+    newCardClose,
+    newCardPopupButton,
+    newCardErrorName,
+    newCardErrorLink,
+    editButton,
+    editPopup,
+    editClosePopup,
+    editForm,
+    editFormInputName,
+    editFormInputAbout, 
+    editSaveButton, 
+    popupErrorName,
+    popupErrorAbout,
+    popupImage,
+    closeImageButton,
+    popupImageFullsize,
+    ERROR_REQUIRED_FIELD,
+    ERROR_NOT_ENOUGH_SYMBOLS,
+    ERROR_NOT_A_LINK,
+    renderCards,
+    newCardPop,
+    editPop,
+    imagePop,
+    online, 
+    internet,
+    noInternetImage
+}
 
 
 

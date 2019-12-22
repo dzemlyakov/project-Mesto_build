@@ -1,3 +1,56 @@
+import  './pages/index.css'
+import {
+  placesList,
+    addCardButton,
+    userName,
+    userJob,
+    newCardForm,
+    newCardInputName,
+    newCardInputLink, 
+    newCardPopupButton,
+    newCardErrorName,
+    newCardErrorLink,
+    editButton,
+    editForm,
+    editFormInputName,
+    editFormInputAbout, 
+    editSaveButton, 
+    renderCards,
+    newCardPop,
+    editPop,
+    imagePop,
+    online, 
+} from './scripts/constants.js'
+import {noInternet} from './scripts/functions.js'
+import {editInputHandler} from './scripts/functions.js'
+import {inputHandler} from './scripts/functions.js'
+import {infoEditPopup} from './scripts/functions.js'
+import {disableButton} from './scripts/functions.js'
+import {api} from './scripts/login.js'
+
+const user = {};
+
+api.getUserInfo()
+.then((res)=> {
+  for (let key in res) {
+    if (res.hasOwnProperty(key)) {
+      user[key] = res[key]
+    } else console.log(`Ошибка ${key}`)
+  }
+  userName.textContent = res.name;
+  userJob.textContent = res.about;
+});
+
+api.getInitialCards()
+.then((res) => {
+    res.forEach(item => {
+        renderCards.addCard(item.name, item.link); 
+      })
+    
+});
+
+noInternet(online);
+
 placesList.addEventListener('click', (event) => {
   if (event.target.classList.contains('place-card__image')) {
     imagePop.openImagePopup();
@@ -23,6 +76,7 @@ editForm.addEventListener('submit', (event) => {
   editPop.closePopup();
   disableButton(editSaveButton);
   event.preventDefault();
+  
 });
 
 editForm.addEventListener('input', editInputHandler);

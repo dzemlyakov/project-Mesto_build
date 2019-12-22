@@ -1,4 +1,22 @@
-
+import {
+    newCardPopupButton,
+    addCardButton,
+    newCardInputName,
+    newCardInputLink, 
+    editButton,
+    editSaveButton,
+    editFormInputName,
+    editFormInputAbout,
+    userName,
+    userJob,
+    popupErrorName,
+    popupErrorAbout,
+    ERROR_REQUIRED_FIELD,
+    ERROR_NOT_ENOUGH_SYMBOLS,
+    ERROR_NOT_A_LINK,
+    internet,
+    noInternetImage
+} from './constants'
   
   function disableButton(button) {
     button.setAttribute('disabled', true);
@@ -70,3 +88,8 @@
       return true;
     }
   }
+  export {disableButton}
+  export {noInternet}
+  export {editInputHandler}
+  export {inputHandler}
+  export {infoEditPopup}
